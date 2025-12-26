@@ -13,6 +13,7 @@ export function Chat({
 }) {
   const { toggleSidebar } = useSidebar();
   const { theme } = useTheme();
+  console.log("theme", theme);
 
   // Generate greeting based on available profile data
   const getGreeting = () => {
@@ -35,7 +36,6 @@ export function Chat({
         return createSession();
       },
     },
-    // https://chatkit.studio/playground
     theme: {
       colorScheme: theme === "dark" ? "dark" : "light",
     },
