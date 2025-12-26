@@ -1,8 +1,7 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 
 type Testimonial = {
@@ -29,7 +28,7 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index: number) => {
+  const _isActive = (index: number) => {
     return index === active;
   };
 
@@ -40,7 +39,7 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay, handleNext]);
 
-  const getRotation = (index: number) => {
+  const _getRotation = (index: number) => {
     // Deterministic rotation based on index to avoid hydration mismatch
     const rotations = [-10, -5, 0, 5, 10, -8, 8, -3, 3, -7];
     return rotations[index % rotations.length];

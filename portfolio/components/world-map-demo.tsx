@@ -19,10 +19,10 @@ export default function WorldMapDemo() {
             },
             {
               start: { lat: 51.5074, lng: -0.1278 }, // London
-              end: { lat: 19.0760, lng: 72.8777 }, // Mumbai
+              end: { lat: 19.076, lng: 72.8777 }, // Mumbai
             },
             {
-              start: { lat: 19.0760, lng: 72.8777 }, // Mumbai
+              start: { lat: 19.076, lng: 72.8777 }, // Mumbai
               end: { lat: -22.9068, lng: -43.1729 }, // Rio de Janeiro
             },
             {
@@ -34,7 +34,7 @@ export default function WorldMapDemo() {
               end: { lat: 43.6532, lng: -79.3832 }, // Toronto
             },
             {
-              start: { lat: 19.0760, lng: 72.8777 }, // Mumbai
+              start: { lat: 19.076, lng: 72.8777 }, // Mumbai
               end: { lat: 37.7749, lng: -122.4194 }, // San Francisco
             },
             {
@@ -43,7 +43,7 @@ export default function WorldMapDemo() {
             },
             {
               start: { lat: 25.2048, lng: 55.2708 }, // Dubai
-              end: { lat: 19.0760, lng: 72.8777 }, // Mumbai
+              end: { lat: 19.076, lng: 72.8777 }, // Mumbai
             },
             {
               start: { lat: 25.2048, lng: 55.2708 }, // Dubai

@@ -1,10 +1,10 @@
 "use client";
 
 import { ChatKit, useChatKit } from "@openai/chatkit-react";
+import { useTheme } from "next-themes";
 import { createSession } from "@/app/actions/create-session";
 import type { CHAT_PROFILE_QUERYResult } from "@/sanity.types";
 import { useSidebar } from "../ui/sidebar";
-import { useTheme } from "next-themes";
 
 export function Chat({
   profile,

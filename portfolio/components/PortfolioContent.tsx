@@ -1,4 +1,17 @@
-import { AboutSection, AchievementsSection, BlogSection, CertificationsSection, ContactSection, EducationSection, ExperienceSection, HeroSection, ProjectsSection, ServicesSection, SkillsSection, TestimonialsSection } from "./sections";
+import {
+  AboutSection,
+  AchievementsSection,
+  BlogSection,
+  CertificationsSection,
+  ContactSection,
+  EducationSection,
+  ExperienceSection,
+  HeroSection,
+  ProjectsSection,
+  ServicesSection,
+  SkillsSection,
+  TestimonialsSection,
+} from "./sections";
 
 async function PortfolioContent() {
   return (

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
+import Loading from "@/app/(portfolio)/loading";
 import { Sidebar, SidebarContent, SidebarRail } from "@/components/ui/sidebar";
 import ChatWrapper from "./chat/ChatWrapper";
-import Loading from "@/app/(portfolio)/loading";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

@@ -5,7 +5,7 @@ import { useSidebar } from "./ui/sidebar";
 
 export function ModeToggleWrapper() {
   const { open, openMobile, isMobile } = useSidebar();
-  
+
   // Hide the toggle when sidebar is open
   const isHidden = isMobile ? openMobile : open;
 
