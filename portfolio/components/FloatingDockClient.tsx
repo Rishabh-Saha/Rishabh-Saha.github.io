@@ -12,7 +12,7 @@ interface NavItem {
   href?: string | null;
   icon?: string | null;
   isExternal?: boolean | null;
-  enabled: boolean;
+  enabled?: boolean | null;
 }
 
 interface FloatingDockClientProps {
