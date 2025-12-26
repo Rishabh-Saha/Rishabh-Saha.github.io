@@ -55,7 +55,7 @@ export default defineType({
       type: "text",
       rows: 3,
       description: "Brief introduction (2-3 sentences)",
-      validation: (Rule) => Rule.required().max(300),
+      validation: (Rule) => Rule.required().max(500),
     }),
     defineField({
       name: "fullBio",
@@ -161,6 +161,15 @@ export default defineType({
           },
         },
       ],
+    }),
+    defineField({
+      name: "resume",
+      title: "Resume/CV",
+      type: "file",
+      description: "Upload your latest resume or CV (PDF preferred)",
+      options: {
+        accept: ".pdf,.doc,.docx",
+      },
     }),
   ],
   preview: {

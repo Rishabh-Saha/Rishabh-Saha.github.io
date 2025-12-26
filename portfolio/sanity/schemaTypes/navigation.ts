@@ -34,6 +34,13 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: "enabled",
+      title: "Enabled",
+      type: "boolean",
+      description: "Choose to show or hide this navigation link",
+      initialValue: false,
+    }),
+    defineField({
       name: "order",
       title: "Display Order",
       type: "number",

@@ -7,7 +7,8 @@ const NAVIGATION_QUERY =
   title,
   href,
   icon,
-  isExternal
+  isExternal,
+  enabled
 }`);
 
 export async function FloatingDock() {
@@ -17,5 +18,7 @@ export async function FloatingDock() {
     return null;
   }
 
-  return <FloatingDockClient navItems={navItems} />;
+  return (
+    <FloatingDockClient navItems={navItems.filter((item) => item.enabled)} />
+  );
 }

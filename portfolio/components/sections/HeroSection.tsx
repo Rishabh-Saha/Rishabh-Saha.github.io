@@ -2,6 +2,7 @@ import Link from "next/link";
 import { defineQuery } from "next-sanity";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
 import { ProfileImage } from "./ProfileImage";
@@ -20,7 +21,8 @@ const HERO_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
   availability,
   socialLinks,
   yearsOfExperience,
-  profileImage
+  profileImage,
+  resume {asset->{url}}
 }`);
 
 export async function HeroSection() {
@@ -121,13 +123,14 @@ export async function HeroSection() {
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-4 @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-4 @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground items-center">
                 {profile.email && (
                   <div className="flex items-center gap-2">
                     <span>📧</span>
                     <span className="truncate">{profile.email}</span>
                   </div>
                 )}
+
                 {profile.location && (
                   <div className="flex items-center gap-2">
                     <span>📍</span>
@@ -139,6 +142,37 @@ export async function HeroSection() {
                     <span>✅</span>
                     <span>{profile.availability}</span>
                   </div>
+                )}
+              </div>
+              <div className="flex flex-wrap gap-4 @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground items-center">
+                {profile.resume?.asset?.url && (
+                  <Link
+                    href={profile.resume.asset.url}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <HoverBorderGradient
+                      containerClassName="rounded-full"
+                      className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 text-xs @md/hero:text-sm"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                        />
+                      </svg>
+                      <span>Download Resume</span>
+                    </HoverBorderGradient>
+                  </Link>
                 )}
               </div>
             </div>

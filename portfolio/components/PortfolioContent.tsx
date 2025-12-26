@@ -10,7 +10,7 @@ import {
   ProjectsSection,
   ServicesSection,
   SkillsSection,
-  TestimonialsSection,
+  // TestimonialsSection,
 } from "./sections";
 
 async function PortfolioContent() {
@@ -18,7 +18,7 @@ async function PortfolioContent() {
     <>
       <HeroSection />
       <AboutSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <SkillsSection />
       <ExperienceSection />
       <EducationSection />
