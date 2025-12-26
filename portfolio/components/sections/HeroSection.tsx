@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { defineQuery } from "next-sanity";
-import { sanityFetch } from "@/sanity/lib/live";
-import { BackgroundRippleEffect } from "../ui/background-ripple-effect";
-import { LayoutTextFlip } from "../ui/layout-text-flip";
-import { ProfileImage } from "../ProfileImage";
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { urlFor } from "@/sanity/lib/image";
-import { BackgroundGradient } from "../ui/background-gradient";
+import { sanityFetch } from "@/sanity/lib/live";
+import { ProfileImage } from "./ProfileImage";
 
 const HERO_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
   firstName,
@@ -24,7 +23,7 @@ const HERO_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
   profileImage
 }`);
 
-async function HeroSection() {
+export async function HeroSection() {
   const { data: profile } = await sanityFetch({ query: HERO_QUERY });
 
   if (!profile) {
@@ -44,16 +43,14 @@ async function HeroSection() {
           <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-8 @lg:gap-12 items-center">
             {/* Profile Image */}
             {profile.profileImage && (
-            //   <BackgroundGradient>
-                <ProfileImage
-                  imageUrl={urlFor(profile.profileImage)
-                    .width(600)
-                    .height(600)
-                    .url()}
-                  firstName={profile.firstName || ""}
-                  lastName={profile.lastName || ""}
-                />
-            //   </BackgroundGradient>
+              <ProfileImage
+                imageUrl={urlFor(profile.profileImage)
+                  .width(600)
+                  .height(600)
+                  .url()}
+                firstName={profile.firstName || ""}
+                lastName={profile.lastName || ""}
+              />
             )}
             {/* Text Content */}
             <div className="@container/hero space-y-4 @md/hero:space-y-6">
@@ -151,5 +148,3 @@ async function HeroSection() {
     </section>
   );
 }
-
-export default HeroSection;

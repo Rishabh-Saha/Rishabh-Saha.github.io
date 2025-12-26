@@ -1,11 +1,20 @@
-import { AboutSection } from "./sections/AboutSection";
-import HeroSection from "./sections/HeroSection";
+import { AboutSection, AchievementsSection, BlogSection, CertificationsSection, ContactSection, EducationSection, ExperienceSection, HeroSection, ProjectsSection, ServicesSection, SkillsSection, TestimonialsSection } from "./sections";
 
 async function PortfolioContent() {
   return (
     <>
       <HeroSection />
       <AboutSection />
+      <TestimonialsSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <EducationSection />
+      <ProjectsSection />
+      <CertificationsSection />
+      <AchievementsSection />
+      <ServicesSection />
+      <BlogSection />
+      <ContactSection />
     </>
   );
 }
