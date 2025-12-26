@@ -164,6 +164,7 @@ export async function HeroSection() {
                         stroke="currentColor"
                         className="w-4 h-4"
                       >
+                        <title>Download icon</title>
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
