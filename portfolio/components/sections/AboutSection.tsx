@@ -96,11 +96,11 @@ export async function AboutSection() {
         {/* Stats from CMS */}
         {profile.stats && profile.stats.length > 0 && (
           <div className="@container mt-12 pt-12 border-t">
-            <div className="grid grid-cols-2 @lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               {profile.stats.map((stat, idx) => (
                 <div
                   key={`${stat.label}-${idx}`}
-                  className="@container/stat text-center"
+                  className="@container/stat text-center min-w-30"
                 >
                   <div className="text-3xl @md/stat:text-4xl font-bold text-primary mb-2">
                     {stat.value}

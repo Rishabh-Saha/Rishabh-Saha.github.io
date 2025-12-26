@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { defineQuery } from "next-sanity";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
-import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
 import { ProfileImage } from "./ProfileImage";
