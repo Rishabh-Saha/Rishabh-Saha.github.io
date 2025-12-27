@@ -37,15 +37,15 @@ const NAVIGATION_QUERY =
 const SECTION_COMPONENTS: Record<string, ComponentType> = {
   Home: HeroSection,
   About: AboutSection,
+  Projects: ProjectsSection,
   Testimonials: TestimonialsSection,
+  Blog: BlogSection,
   Skills: SkillsSection,
   Experience: ExperienceSection,
   Education: EducationSection,
-  Projects: ProjectsSection,
   Certifications: CertificationsSection,
   Achievements: AchievementsSection,
   Services: ServicesSection,
-  Blog: BlogSection,
   Contact: ContactSection,
 } as const;
 
