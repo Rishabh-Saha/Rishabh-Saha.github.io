@@ -5,29 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { urlFor } from "@/sanity/lib/image";
+import type { PROJECTS_QUERYResult } from "@/sanity.types";
 
-type Project = {
-  title?: string;
-  slug?: { current?: string };
-  tagline?: string;
-  category?: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  coverImage?: {
-    asset?: {
-      _ref?: string;
-      _type?: string;
-    };
-    _type?: string;
-  };
-  technologies?: Array<{
-    name?: string;
-    category?: string;
-    color?: string;
-  }>;
-};
-
-export function ProjectCard({ projects }: { projects: Project[] }) {
+export function ProjectCard({ projects }: { projects: PROJECTS_QUERYResult }) {
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
 
   return (
@@ -103,7 +83,7 @@ export function ProjectCard({ projects }: { projects: Project[] }) {
                         key={`${project.slug?.current}-tech-${techIdx}`}
                         className="text-xs px-2 py-0.5 @md/card:py-1 rounded-md bg-muted"
                       >
-                        {techData.name}
+                        {String(techData.name)}
                       </span>
                     ) : null;
                   })}

@@ -24,7 +24,7 @@ interface NavigationItem {
   enabled: boolean;
 }
 
-const NAVIGATION_QUERY =
+const PORTFOLIO_NAVIGATION_QUERY =
   defineQuery(`*[_type == "navigation"] | order(order asc){
   title,
   href,
@@ -50,7 +50,9 @@ const SECTION_COMPONENTS: Record<string, ComponentType> = {
 } as const;
 
 async function PortfolioContent() {
-  const { data: navItems } = await sanityFetch({ query: NAVIGATION_QUERY });
+  const { data: navItems } = await sanityFetch({
+    query: PORTFOLIO_NAVIGATION_QUERY,
+  });
 
   if (!navItems || navItems.length === 0) {
     return null;
