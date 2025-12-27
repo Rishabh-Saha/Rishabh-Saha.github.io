@@ -160,6 +160,7 @@ export async function ExperienceSection() {
               </div>
             </div>
           ))}
+          <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background" />
         </div>
       </div>
     </section>
