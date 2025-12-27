@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { defineQuery } from "next-sanity";
-import WorldMapDemo from "@/components/world-map-demo";
-import { sanityFetch } from "@/sanity/lib/live";
-import { ContactForm } from "./ContactForm";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
+import { sanityFetch } from "@/sanity/lib/live";
+import { ContactForm } from "./ContactForm";
 
 const PROFILE_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
   email,
@@ -21,11 +20,14 @@ export async function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 px-6 pb-40 bg-muted/30 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 px-6 pb-40 bg-muted/30 relative overflow-hidden"
+    >
       {/* Animated Background */}
       <ShootingStars />
       <StarsBackground />
-      
+
       {/* <WorldMapDemo /> */}
 
       <div className="container mx-auto max-w-4xl relative z-10">
